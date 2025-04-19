@@ -1,0 +1,14 @@
+# Ignorar carpetas comunes de compilación
+**/bin/
+**/obj/
+
+# Ignorar archivos por extensión
+*.depend
+*.layout
+
+# Ejecutables
+**/main.exe
+
+# Configuración de VSCode
+.vscode/
+**/.vscode/**
