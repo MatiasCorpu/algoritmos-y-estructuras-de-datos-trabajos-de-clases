@@ -8,6 +8,8 @@
 int main()
 {
     char numero1[] = "8888888888888888888888888888888"; // 31 digitos
+    //123456789012345678901234567890
+    
     char numero2[] = "2222222222222222222222222222223"; 
     char resultado[TAM_RESULTADO];
 
