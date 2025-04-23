@@ -44,11 +44,11 @@ int pilaVerTope(const tPila *pila, void *dato, unsigned tamDato)
 int pilaDesapilar(tPila *pila, void *dato, unsigned tamDato)
 {
     tNodo *aux = *pila;
-    if (*pila == NULL)
+    if (aux == NULL)
         return PILA_VACIA;
 
     *pila = aux->sig;
-    memcpy(dato, (*pila)->info, MINIMO((*pila)->tamInfo, tamDato));
+    memcpy(dato, aux->info, MINIMO(aux->tamInfo, tamDato));
 
     free(aux->info);
     free(aux);
