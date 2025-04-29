@@ -25,7 +25,7 @@ bool colaLlena(const tCola *cola, unsigned tamDato) // se fija si puede reservar
 
     free(aux);
     free(info);
-    return (aux->info == NULL || aux == NULL);
+    return (info == NULL || aux == NULL);
 }
 
 bool colaVacia(const tCola *cola) // si el puntero pri de la cola esta NULL
