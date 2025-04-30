@@ -2,45 +2,34 @@
 #define CONTROL_DE_CALIDAD_H_INCLUDED
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+#include "cola-dinamica.h"
 
-/*
-control de calidad durante el proceso de fabricacion
--> resultados individuales por lote de cada unidad = archivo
+#define TODO_OK 0
+#define ERROR_ARCHIVO 1
+#define ERROR_LINEA 2
 
-entrada.txt -> contiene los registros
-    * codLote char[] (ej. `L001`)
-    * idProducto unsigned
-    * resultadoControl ok | falla
+#define TAM_MAX_LINEA 500
+#define TAM_MAX_COD_LOTE 5
+#define TAM_MAX_RESULTADO 5
 
+typedef struct
+{
+    char codLote[TAM_MAX_COD_LOTE];           // L001
+    unsigned idProducto;                      // 12345678
+    char resultadoControl[TAM_MAX_RESULTADO]; // ok | falla
+} tProductoCalidad;
 
-registros ordenados por lote
-    L001
-    L001
-    L001
-    L001
-    L002
-    L002
-    L002
-    ...
+int escribirLoteEnArchivo(FILE *archivo, tCola *cola);
+int lineaAEstructuraProductoCalidad(tProductoCalidad *producto, const char *linea);
+int procesarArchivoDeEntrada(const char *entrada, const char *lotesAprobados, const char *lotesObservados);
 
+void mostrarArchivoDeEntrada(const char *nomArch);
+void mostrarArchivosDeSalida(const char *lotesAprobados, const char *lotesObservados);
+void mostrarArchivoProductoTxt(const char *nomArch, const char *encavezado);
 
-Escribir archivos de salida:
-1) Si todos los productos del lote OK -> archivo "lotesAprobados.txt"
-2) Si al menos uno de los productos del lote falla -> archivo "lotesObservados.txt"
-
-fundamental:
-    *los regisstros conserven el orden original
-    *el archivo de entrada se lea una sola vez
-    *La separacion en los archivos de salida se realize por lote completo, no por producto individual (NO ENTENDI)
-
-DESARROLLAR:
-1) mostrar un menu de opciones:
-    a) procesar archivo de entrada: leer el archivo "entrada.txt" y generar "lotesAprobados.txt" y "lotesObservados.txt"
-    b) Mostrar archivo de entrada
-    c) Mostrar el contenido de los archivos de salida con un encabezado apropiado para cada uno
-
-2) Entregar incluyendo un lote de prueba con la mayor cantidad posibles de situaciones.
-
-*/
+int menu();
 
 #endif // CONTROL_DE_CALIDAD_H_INCLUDED
