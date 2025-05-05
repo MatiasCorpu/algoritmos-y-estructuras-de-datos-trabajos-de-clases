@@ -12,6 +12,8 @@
 
 #define MINIMO(x, y) ((x) <= (y) ? (x) : (y))
 
+typedef void (*Accion)(void *dato, void *parametro);
+
 typedef struct sNodo
 {
     void *info;
@@ -21,15 +23,17 @@ typedef struct sNodo
 
 typedef tNodo *tLista;
 
-void listaCrear(tLista *pl);
-void listaVaciar(tLista *pl);
-bool listaVacia(const tLista *pl);
-bool listaLlena(const tLista *pl, unsigned tamDato);
-int listaPonerAlInicio(tLista *pl, const void *dato, unsigned tamDato);
-int listaPonerAlFinal(tLista *pl, const void *dato, unsigned tamDato);
-int listaSacarPrimero(tLista *pl, void *dato, unsigned tamDato);
-int listaSacarUltimo(tLista *pl, void *dato, unsigned tamDato);
-int listaVerPrimero(const tLista *pl, void *dato, unsigned tamDato);
-int listaVerUltimo(const tLista *pl, void *dato, unsigned tamDato);
+void listaCrear(tLista *pl);                                            //
+void listaVaciar(tLista *pl);                                           //
+bool listaVacia(const tLista *pl);                                      //
+bool listaLlena(const tLista *pl, unsigned tamDato);                    //
+int listaPonerAlInicio(tLista *pl, const void *dato, unsigned tamDato); //
+int listaPonerAlFinal(tLista *pl, const void *dato, unsigned tamDato);  //
+int listaSacarPrimero(tLista *pl, void *dato, unsigned tamDato);        //
+int listaSacarUltimo(tLista *pl, void *dato, unsigned tamDato);         //
+int listaVerPrimero(const tLista *pl, void *dato, unsigned tamDato);    //
+int listaVerUltimo(const tLista *pl, void *dato, unsigned tamDato);     //
+// funciones que no estan en los apuntes
+void listaMap(tLista *pl, Accion accion, void *parametro);
 
 #endif // LISTA_SIMPLEMENTE_ENLAZADA_H_INCLUDED

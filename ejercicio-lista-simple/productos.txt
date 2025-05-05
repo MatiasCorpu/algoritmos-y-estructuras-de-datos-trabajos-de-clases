@@ -1,0 +1,12 @@
+A00;Primero;69
+A01;Monitor;20
+B01;Teclado;40
+C01;Mouse;60
+D01;CPU;80
+E01;Impresora;100
+F01;Escaner;120
+G01;Proyector;140
+H01;Parlantes;160
+I01;Webcam;180
+J01;Router;200
+J02;Ultimo;51

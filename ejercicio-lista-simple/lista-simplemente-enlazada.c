@@ -119,3 +119,12 @@ int listaVerUltimo(const tLista *pl, void *dato, unsigned tamDato)
     memcpy(dato, (*pl)->info, MINIMO(tamDato, (*pl)->tamInfo));
     return TODO_BIEN;
 }
+
+void listaMap(tLista *pl, Accion accion, void *parametro)
+{
+    while (*pl)
+    {
+        accion((*pl)->info, parametro);
+        pl = &(*pl)->sig;
+    }
+}
