@@ -3,10 +3,34 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
 
-// insertar al inicio
-// NO VALIORES DUBPLICADOS
-//FUNCION MOSTRAR LISTA o actualizar informacion, funcoin MAP, puede ser mostrar o actualizar
+#define TODO_BIEN 0
+#define LISTA_LLENA 1
+#define LISTA_VACIA 2
 
+#define MINIMO(x, y) ((x) <= (y) ? (x) : (y))
+
+typedef struct sNodo
+{
+    void *info;
+    unsigned tamInfo;
+    struct sNodo *sig;
+} tNodo;
+
+typedef tNodo *tLista;
+
+// 10 funciones
+void listaCrear(tLista *pl);
+void listaVaciar(tLista *pl);
+bool listaVacia(const tLista *pl);
+bool listaLlena(const tLista *pl, unsigned tamDato);
+int listaPonerAlInicio(tLista *pl, const void *dato, unsigned tamDato);
+int listaPonerAlFinal(tLista *pl, const void *dato, unsigned tamDato);
+int listaSacarPrimero(tLista *pl, void *dato, unsigned tamDato);
+int listaSacarUltimo(tLista *pl, void *dato, unsigned tamDato);
+int listaVerPrimero(const tLista *pl, void *dato, unsigned tamDato);
+int listaVerUltimo(const tLista *pl, void *dato, unsigned tamDato);
 
 #endif // PILA_SIMPLEMENTE_ENLAZADA_H_INCLUDED

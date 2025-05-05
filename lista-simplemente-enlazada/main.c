@@ -6,6 +6,11 @@
 // cola = fifo -> dos puntos de e/s, no se puede recorrer
 // tanto cola como pila, son un tipo de LISTA
 // TDA VECOTR es un a implementacion estatica de una LISTA
+/*
+// insertar al inicio
+// NO VALIORES DUBPLICADOS
+//FUNCION MOSTRAR LISTA o actualizar informacion, funcoin MAP, puede ser mostrar o actualizar
+*/
 
 int main()
 {
