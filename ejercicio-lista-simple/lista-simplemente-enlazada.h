@@ -1,5 +1,5 @@
-#ifndef PILA_SIMPLEMENTE_ENLAZADA_H_INCLUDED
-#define PILA_SIMPLEMENTE_ENLAZADA_H_INCLUDED
+#ifndef LISTA_SIMPLEMENTE_ENLAZADA_H_INCLUDED
+#define LISTA_SIMPLEMENTE_ENLAZADA_H_INCLUDED
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,8 +9,6 @@
 #define TODO_BIEN 0
 #define LISTA_LLENA 1
 #define LISTA_VACIA 2
-
-// ERROR: los archivos se llaman a excepcion del proyecto se llaman "pila". Cambiar
 
 #define MINIMO(x, y) ((x) <= (y) ? (x) : (y))
 
@@ -23,7 +21,6 @@ typedef struct sNodo
 
 typedef tNodo *tLista;
 
-// 10 funciones
 void listaCrear(tLista *pl);
 void listaVaciar(tLista *pl);
 bool listaVacia(const tLista *pl);
@@ -35,4 +32,4 @@ int listaSacarUltimo(tLista *pl, void *dato, unsigned tamDato);
 int listaVerPrimero(const tLista *pl, void *dato, unsigned tamDato);
 int listaVerUltimo(const tLista *pl, void *dato, unsigned tamDato);
 
-#endif // PILA_SIMPLEMENTE_ENLAZADA_H_INCLUDED
+#endif // LISTA_SIMPLEMENTE_ENLAZADA_H_INCLUDED

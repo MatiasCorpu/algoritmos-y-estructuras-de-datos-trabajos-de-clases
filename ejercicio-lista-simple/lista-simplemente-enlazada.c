@@ -1,4 +1,4 @@
-#include "pila-simplemente-enlazada.h"
+#include "lista-simplemente-enlazada.h"
 
 void listaCrear(tLista *pl)
 {
@@ -64,7 +64,7 @@ int listaPonerAlFinal(tLista *pl, const void *dato, unsigned tamDato)
     nuevo->tamInfo = tamDato;
     nuevo->sig = NULL;
 
-    while (*pl) // me posiciono con el puntero al final de la lista
+    while (*pl)
         pl = &(*pl)->sig;
 
     *pl = nuevo;
