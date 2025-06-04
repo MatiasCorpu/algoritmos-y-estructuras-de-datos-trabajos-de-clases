@@ -2,10 +2,12 @@
 #include <stdlib.h>
 
 #include "pila-hibrida.h"
+// #include "pila-hibrida.c"
 #include "archivo.h"
+// #include "archivo.c"
 
 /*
-nota: El archivo datos.dat fue generado tal que al leerse se pueda saber primero el tamaño de cada dato y luego el dato en sí.
+nota: El archivo datos.dat fue generado tal que al leerse se pueda saber primero el tamaï¿½o de cada dato y luego el dato en sï¿½.
 
 datos.dat:
 
